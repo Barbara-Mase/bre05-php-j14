@@ -2,7 +2,7 @@
 
 class Router {
     
-    public function __construct {
+    public function __construct() {
         
     }
     
@@ -15,16 +15,24 @@ class Router {
                 $ctrl-> show();
             } else if ($_GET["route"] === "create_user") {
                 $ctrl = new UserController();
-                $ctrl -> checkCreate();
+                $ctrl -> create();
+                var_dump($ctrl);
+            } else if($_GET["route"] === "check_create_user") {
+                $ctrl = new UserController();
+                $ctrl->checkCreate();
             } else if($_GET["route"] === "update_user") {
                 $ctrl = new UserController();
-                $ctrl->update()
+                $ctrl->update();
+            } else if($_GET["route"] === "check_update_user") {
+                $ctrl = new UserController();
+                $ctrl = checkUpdate();
             } else if($_GET["route"] === "delete_user") {
                 $ctrl = new UserController();
-                $ctrl -> delete()
+                $ctrl -> delete();
             } else {
                 $ctrl = new UserController();
-                $ctrl -> list()
+                $ctrl -> list();
         }
     }
+}
 }
