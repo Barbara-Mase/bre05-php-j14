@@ -6,7 +6,26 @@
     </head>
     <body>
         <main>
-            <p>Page create</p>
+            <h1>Créer un compte</h1>
+            
+            <form method="post" action="check_create_user">
+                
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="first_name">Prénom</label>
+                    <input type="text" name="first_name" id="first_name" required>
+                    <label for="last_name">Nom de famille</label>
+                    <input type="text" name="last_name" id="last_name" required>
+                </fieldset>
+                <fieldset>
+                    <button type="submit">Envoyer</button>
+                </fieldset>
+                
+                
+                
+            </form>
+            
         </main>
         
     </body>

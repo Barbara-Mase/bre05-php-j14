@@ -19,6 +19,21 @@ class UserController extends AbstractController
     
     public function checkCreate() : void {
         $route = "check_create_user";
+        
+        $email = $_POST("email");
+        $first_name = $_POST("first_name");
+        $last_name = $_POST("last_name");
+        
+        $user = new User();
+        
+        $user->setEmail($email);
+        $user->setFirstName($first_name);
+        $user->setLastName($last_name);
+        
+        $manager = new UserManager();
+        $manager->create($user);
+        require "./list.phtml";
+        
     }
     
     public function update() : void {

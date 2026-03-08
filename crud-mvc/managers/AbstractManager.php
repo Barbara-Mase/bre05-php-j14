@@ -1,0 +1,25 @@
+<?php
+
+
+class AbstractManager {
+    
+    protected PDO $db;
+    
+    public function __construct() {
+        
+        $host = "db.3wa.io";
+        $port = "3306";
+        $dbname = "barbaramase_coda_bph_crudmvc";
+        $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
+
+        $user = "barbaramase";
+        $password = "a00b6c174df6836deabe8330debe5e49";
+
+        $this->db = new PDO(
+            $connexionString,
+            $user,
+            $password
+        );
+    }
+    
+}
