@@ -22,7 +22,7 @@ class UserManager extends AbstractManager
             
         $query->execute($parameters);
         
-        $id = $this->db->lastInserId();
+        $id = $this->db->lastInsertId();
         $user->setId($id);
         
         return $user;

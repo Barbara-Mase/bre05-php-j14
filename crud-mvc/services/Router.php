@@ -20,6 +20,7 @@ class Router {
             } else if($_GET["route"] === "check_create_user") {
                 $ctrl = new UserController();
                 $ctrl->checkCreate();
+                var_dump("test");
             } else if($_GET["route"] === "update_user") {
                 $ctrl = new UserController();
                 $ctrl->update();

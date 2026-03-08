@@ -3,11 +3,12 @@
 
 class User {
     
-    public function __construct(
-        private ?int $id, 
-        private string $email, 
-        private string $first_name, 
-        private string $last_name) {
+    private ?int $id = NULL;
+    private string $email; 
+    private string $first_name; 
+    private string $last_name;
+    
+    public function __construct() {
             
         }
         
@@ -20,10 +21,10 @@ class User {
     }
         
     public function getEmail() : string {
-        return $this->id;
+        return $this->email;
     }
         
-    public function setEmail(string $email) : void{
+    public function setEmail(string $email) : void {
         $this -> email = $email;
     }
     

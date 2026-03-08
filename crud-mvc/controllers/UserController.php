@@ -5,6 +5,10 @@ class UserController extends AbstractController
 
 {
     
+    public function __construct() {
+    
+    }
+    
     public function show() : void{
         $route = "show";
         require "./templates/users/show.phtml";
@@ -16,23 +20,26 @@ class UserController extends AbstractController
         require "./templates/users/create.phtml";
         //ou layout ? 
     }
-    
+
+
     public function checkCreate() : void {
         $route = "check_create_user";
-        
-        $email = $_POST("email");
-        $first_name = $_POST("first_name");
-        $last_name = $_POST("last_name");
+        $email = $_POST["email"];
+        var_dump($email);
+        $first_name = $_POST["first_name"];
+        $last_name = $_POST["last_name"];
         
         $user = new User();
         
         $user->setEmail($email);
         $user->setFirstName($first_name);
         $user->setLastName($last_name);
+        var_dump($user);
         
         $manager = new UserManager();
         $manager->create($user);
-        require "./list.phtml";
+        
+        require "./templates/users/list.phtml";
         
     }
     
